@@ -2,31 +2,36 @@
   "name": "File-Sharing",
   "version": "1.0.0",
   "description": "A file sharing web app",
-  "main": "index.js",
+  "main": "dist",
   "scripts": {
-    "build": "webpack",
-    "start": "webpack-dev-server --output-public-path=/build/"
+    "dev": "nodemon -w src --exec \"babel-node src --presets env,stage-0\"",
+    "build": "babel src -s -D -d dist --presets env,stage-0",
+    "start": "node dist",
+    "prestart": "npm run -s build",
+    "test": "eslint src"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Future-PirateKing/File-Sharing.git"
+    "url": "git+https://github.com/future-pirate-king/File-Sharing.git"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Future-PirateKing/File-Sharing/issues"
+    "url": "https://github.com/future-pirate-king/File-Sharing/issues"
   },
-  "homepage": "https://github.com/Future-PirateKing/File-Sharing#readme",
+  "homepage": "https://github.com/future-pirate-king/File-Sharing#readme",
   "devDependencies": {
     "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.4",
-    "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-0": "^6.24.1",
     "eslint": "^4.19.1",
-    "webpack": "^4.12.0",
-    "webpack-cli": "^3.0.3",
-    "webpack-dev-server": "^3.1.4"
+    "nodemon": "^1.17.5"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "morgan": "^1.9.0"
   }
 }

@@ -1,7 +1,8 @@
 {
     "extends": "eslint:recommended",
     "parserOptions": {
-        "ecmaVersion": 6
+        "ecmaVersion": 6,
+        "sourceType": "module"
     },
     "env": {
         "node": true,
@@ -13,6 +14,17 @@
             "error",
             4
         ],
+        "no-unused-vars": "warn",
+        "semi-spacing": [
+            "error",
+            {
+                "before": false,
+                "after": true
+            }
+        ],
+        "semi": "error",
+        "eqeqeq": "warn",
+        "no-multiple-empty-lines": "error",
         "quotes": [
             "error",
             "single",
@@ -44,7 +56,8 @@
             {
                 "code": 80,
                 "ignoreUrls": true,
-                "ignoreRegExpLiterals": true
+                "ignoreRegExpLiterals": true,
+                "ignoreComments": true
             }
         ],
         "arrow-spacing": [
