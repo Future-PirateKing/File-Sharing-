@@ -4,6 +4,8 @@ import cors from 'cors';
 import morgan from 'morgan';
 import bodyParser from 'body-parser';
 
+import { fileRoutes } from './routes/fileRoutes';
+
 const PORT = 3000;
 const app = express();
 app.server = http.createServer(app);
@@ -21,6 +23,8 @@ app.use(bodyParser.json({
 }));
 app.set('root', __dirname);
 
+
+app.use('/', fileRoutes);
 
 app.use((req, res, next) => {
     const error = new Error('Not found');

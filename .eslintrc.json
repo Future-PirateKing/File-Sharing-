@@ -14,7 +14,7 @@
             "error",
             4
         ],
-        "no-unused-vars": "warn",
+        "no-unused-vars": "off",
         "semi-spacing": [
             "error",
             {
@@ -54,7 +54,7 @@
         "max-len": [
             "error",
             {
-                "code": 80,
+                "code": 90,
                 "ignoreUrls": true,
                 "ignoreRegExpLiterals": true,
                 "ignoreComments": true
